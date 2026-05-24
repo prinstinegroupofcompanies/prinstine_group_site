@@ -9,8 +9,7 @@ import slide3 from '../assets/slide-3.jpeg';
 import slide4 from '../assets/slide-4.jpeg';
 import ceoPhoto from '../assets/CEO-profile image.jpeg';
 import officeImage from '../assets/office-address-image.jpeg';
-import jamesPhoto from '../assets/james-pgc.jpeg';
-import jamesettaPhoto from '../assets/jamesetta-pgc.jpeg';
+import { teamCarouselMembers, TEAM_CAROUSEL_COUNT } from '../data/companyTeam';
 import yolainPhoto from '../assets/Yolain_Kate_Waka_Metzger.jpeg';
 import amyPhoto from '../assets/Amy_N_Stewart.jpeg';
 import lavelaPhoto from '../assets/Cllr_Lavela_B_Walker.jpeg';
@@ -75,23 +74,13 @@ function Home() {
     }
   ];
 
-  // Leadership carousel: James and Jamesetta
-  const leadershipProfiles = [
-    {
-      name: 'James S. Tokpa',
-      title: 'Finance Manager',
-      subtitle: 'Lead Accounting software trainer',
-      bio: 'Mr. Tokpa is a professional Accountant with years of experience in accountancy and finance. His expertise and dedication continue to push PGC towards excellence.',
-      image: jamesPhoto
-    },
-    {
-      name: 'Jamesetta L. Sieh',
-      title: 'Marketing Manager / Lead Tax Analyst',
-      bio: 'Ms. Sieh is a professional in Accountancy, taxation and finance. She is Dedicated to ensuring that all PGC clients are well managed and coded. Her expertise in taxation has placed PGC in the best position of rendering an accurate tax consultancy service.',
-      image: jamesettaPhoto
-    }
-  ];
-  
+  const activeTeamMember = teamCarouselMembers[currentLeaderSlide];
+
+  const goToTeamSlide = (index) => {
+    const next = ((index % TEAM_CAROUSEL_COUNT) + TEAM_CAROUSEL_COUNT) % TEAM_CAROUSEL_COUNT;
+    setCurrentLeaderSlide(next);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -101,10 +90,10 @@ function Home() {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentLeaderSlide((prev) => (prev + 1) % leadershipProfiles.length);
-    }, 6000); // Change leader slide every 6 seconds
+      setCurrentLeaderSlide((prev) => (prev + 1) % TEAM_CAROUSEL_COUNT);
+    }, 5000);
     return () => clearInterval(interval);
-  }, [leadershipProfiles.length]);
+  }, []);
 
   const subsidiaries = [
     {
@@ -480,7 +469,7 @@ function Home() {
                 
                 <div className="flex-1">
                   <h3 className="text-3xl md:text-4xl font-heading font-bold mb-2">
-                    Mr. Prince S. Cooper
+                    Prince S. Cooper
                   </h3>
                   <h4 className="text-xl md:text-2xl font-semibold mb-6 text-accent">
                     Chief Executive Officer
@@ -514,67 +503,100 @@ function Home() {
               </div>
             </div>
             
-            {/* Leadership Carousel - James and Jamesetta */}
+            {/* Team carousel */}
             <div className="mt-12 relative">
-              <div className="relative overflow-hidden rounded-3xl min-h-[300px]">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentLeaderSlide}
-                    initial={{ opacity: 0, x: 100 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -100 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                  >
-                    <div className="bg-white/10 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20">
-                      <div className="flex flex-col md:flex-row items-center gap-10">
-                        <motion.div
-                          whileHover={{ scale: 1.03, rotate: 1 }}
-                          className="relative"
-                        >
-                          <div className="w-56 h-56 rounded-3xl shadow-2xl overflow-hidden border-4 border-white/40 bg-white">
-                            <img
-                              src={leadershipProfiles[currentLeaderSlide].image}
-                              alt={leadershipProfiles[currentLeaderSlide].name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className="absolute -bottom-2 -right-4 w-24 h-24 bg-secondary rounded-full blur-2xl opacity-50"></div>
-                        </motion.div>
-                        
-                        <div className="flex-1">
-                          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-2">
-                            {leadershipProfiles[currentLeaderSlide].name}
-                          </h3>
-                          <h4 className="text-xl md:text-2xl font-semibold mb-6 text-accent">
-                            {leadershipProfiles[currentLeaderSlide].title}
-                          </h4>
-                          {leadershipProfiles[currentLeaderSlide].subtitle && (
-                            <p className="text-lg text-white/80 mb-4">
-                              {leadershipProfiles[currentLeaderSlide].subtitle}
+              <p className="text-center text-white/80 text-lg mb-2 font-medium">
+                Meet Our Team
+              </p>
+              <p className="text-center text-white/60 text-sm mb-6">
+                {currentLeaderSlide + 1} of {TEAM_CAROUSEL_COUNT}
+              </p>
+
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => goToTeamSlide(currentLeaderSlide - 1)}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-all"
+                  aria-label="Previous team member"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => goToTeamSlide(currentLeaderSlide + 1)}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 flex items-center justify-center text-white transition-all"
+                  aria-label="Next team member"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
+                <div className="relative overflow-hidden rounded-3xl min-h-[300px] mx-12 md:mx-14">
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.div
+                      key={activeTeamMember.name}
+                      initial={{ opacity: 0, x: 80 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -80 }}
+                      transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    >
+                      <div className="bg-white/10 backdrop-blur-xl p-8 md:p-12 rounded-3xl shadow-2xl border border-white/20">
+                        <div className="flex flex-col md:flex-row items-center gap-10">
+                          <motion.div
+                            whileHover={{ scale: 1.03, rotate: 1 }}
+                            className="relative"
+                          >
+                            <div className="w-56 h-56 rounded-3xl shadow-2xl overflow-hidden border-4 border-white/40 bg-white">
+                              <img
+                                src={activeTeamMember.image}
+                                alt={activeTeamMember.name}
+                                className="w-full h-full object-cover"
+                                style={{
+                                  objectPosition: 'center center',
+                                  objectFit: 'cover',
+                                  display: 'block',
+                                }}
+                              />
+                            </div>
+                            <div className="absolute -bottom-2 -right-4 w-24 h-24 bg-secondary rounded-full blur-2xl opacity-50"></div>
+                          </motion.div>
+
+                          <div className="flex-1 text-center md:text-left">
+                            <h3 className="text-3xl md:text-4xl font-heading font-bold mb-2">
+                              {activeTeamMember.name}
+                            </h3>
+                            <h4 className="text-xl md:text-2xl font-semibold mb-6 text-accent">
+                              {activeTeamMember.title}
+                            </h4>
+                            <p className="text-lg text-white/90 leading-relaxed">
+                              {activeTeamMember.bio}
                             </p>
-                          )}
-                          <p className="text-lg text-white/90 leading-relaxed">
-                            {leadershipProfiles[currentLeaderSlide].bio}
-                          </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
-              
-              {/* Carousel Indicators */}
-              <div className="flex justify-center gap-3 mt-6">
-                {leadershipProfiles.map((_, index) => (
+
+              {/* Carousel indicators */}
+              <div className="flex flex-wrap justify-center gap-2 mt-6 max-w-xl mx-auto">
+                {teamCarouselMembers.map((member, index) => (
                   <button
-                    key={index}
-                    onClick={() => setCurrentLeaderSlide(index)}
+                    key={member.name}
+                    type="button"
+                    onClick={() => goToTeamSlide(index)}
                     className={`h-2 rounded-full transition-all ${
-                      currentLeaderSlide === index 
-                        ? 'bg-white w-8' 
+                      currentLeaderSlide === index
+                        ? 'bg-white w-8'
                         : 'bg-white/50 w-2 hover:bg-white/75'
                     }`}
-                    aria-label={`Go to ${leadershipProfiles[index].name}`}
+                    aria-label={`Go to ${member.name}`}
+                    aria-current={currentLeaderSlide === index ? 'true' : undefined}
                   />
                 ))}
               </div>
