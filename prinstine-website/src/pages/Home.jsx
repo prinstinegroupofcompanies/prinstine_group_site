@@ -505,7 +505,7 @@ function Home() {
             
             {/* Team carousel */}
             <div className="mt-12 relative">
-              <p className="text-center text-white/80 text-lg mb-2 font-medium">
+              <p className="text-center text-white/150 text-lg mb-2 font-medium">
                 Meet Our Team
               </p>
               <p className="text-center text-white/60 text-sm mb-6">
