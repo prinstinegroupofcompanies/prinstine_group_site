@@ -10,7 +10,7 @@ import jamesKolliePhoto from '../assets/james_kollie.jpeg';
 import marjoriePhoto from '../assets/marjorie_dyer.jpeg';
 import eshmealPhoto from '../assets/ashmeal_harris.jpeg';
 import princeGarkpahPhoto from '../assets/prince_garkpah.jpeg';
-import maePhoto from '../assets/mae_take.jpeg';
+import maePhoto from '../assets/mae_tah.jpeg';
 
 /** Full company team (About page grid + CEO on Home) */
 export const companyTeam = [
@@ -21,12 +21,12 @@ export const companyTeam = [
   { name: 'Constantine J. Vulue', title: 'Head — Prinstine Microfinance', image: constantinePhoto },
   { name: 'Sean J. Cole', title: 'Finance Officer', image: seanPhoto },
   { name: 'Samson Bryant', title: 'ICT Manager', image: samsonPhoto },
-  { name: 'William L. Buku', title: 'Head of Client Engagements', image: williamPhoto },
+  { name: 'William L. Buku, Jr.', title: 'Head of Client Engagements', image: williamPhoto },
   { name: 'James D. Kollie', title: 'Procurement Officer', image: jamesKolliePhoto },
   { name: 'Marjorie P. Dyer', title: 'Administrative Assistant', image: marjoriePhoto },
   { name: 'Eshmeal A. Harris', title: 'Finance Clerk', image: eshmealPhoto },
   { name: 'Prince W. Garkpah', title: 'Graphic Designer', image: princeGarkpahPhoto },
-  { name: 'Mae D. Take', title: 'Brand Ambassador', image: maePhoto },
+  { name: 'Mae D. Tah', title: 'Brand Ambassador', image: maePhoto },
 ];
 
 /** Home page carousel — everyone except CEO (shown in spotlight above) */
@@ -68,7 +68,7 @@ export const teamCarouselMembers = [
     image: samsonPhoto,
   },
   {
-    name: 'William L. Buku',
+    name: 'William L. Buku, Jr.',
     title: 'Head of Client Engagements',
     bio: 'Building strong client relationships and ensuring exceptional service delivery.',
     image: williamPhoto,
@@ -98,7 +98,7 @@ export const teamCarouselMembers = [
     image: princeGarkpahPhoto,
   },
   {
-    name: 'Mae D. Take',
+    name: 'Mae D. Tah',
     title: 'Brand Ambassador',
     bio: 'Representing Prinstine Group and promoting our mission in the community.',
     image: maePhoto,
