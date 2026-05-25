@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
-import slide2 from '../assets/Slide-2.jpeg';
-
 function Services() {
   const API_BASE = import.meta.env.VITE_API_BASE || '';
   const [activeTab, setActiveTab] = useState('consults');
@@ -117,7 +115,7 @@ function Services() {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: `linear-gradient(120deg, rgba(17,24,39,0.45), rgba(30,58,138,0.4)), url(${slide2})`,
+            backgroundImage: `linear-gradient(120deg, rgba(17,24,39,0.85), rgba(30,58,138,0.75))`,
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}

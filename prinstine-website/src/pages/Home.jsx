@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import $ from 'jquery';
 import slide1 from '../assets/Slide-1.jpeg';
-import slide2 from '../assets/Slide-2.jpeg';
 import slide3 from '../assets/slide-3.jpeg';
 import slide4 from '../assets/slide-4.jpeg';
 import ceoPhoto from '../assets/CEO-profile image.jpeg';
@@ -29,7 +28,6 @@ function Home() {
   const slideConfig = [
     { src: slide3, position: 'center center', objectFit: 'contain' },
     { src: slide1, position: 'center center', objectFit: 'contain' },
-    { src: slide2, position: 'center center', objectFit: 'cover' },
     { src: slide4, position: 'center center', objectFit: 'cover' },
   ];
   const slides = slideConfig;
