@@ -10,7 +10,7 @@ import jamesKolliePhoto from '../assets/james_kollie.jpeg';
 import marjoriePhoto from '../assets/marjorie_dyer.jpeg';
 import eshmealPhoto from '../assets/ashmeal_harris.jpeg';
 import princeGarkpahPhoto from '../assets/prince_garkpah.jpeg';
-import maePhoto from '../assets/mae_tah.jpeg';
+import maePhoto from '../assets/mae_take.jpeg';
 
 /** Full company team (About page grid + CEO on Home) */
 export const companyTeam = [
