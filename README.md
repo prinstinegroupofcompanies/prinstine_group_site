@@ -137,24 +137,12 @@ The backend runs with Node.js directly. For production, consider using PM2 or si
 
 ## Deployment
 
-This project is configured for deployment on Render as a **Static Site**.
+This project is configured for deployment on **Vercel**.
 
-### Quick Deploy
+See **[VERCEL_BUILD_FIX.md](./VERCEL_BUILD_FIX.md)** for build settings, root directory options, and troubleshooting.
 
-See **[RENDER_DEPLOYMENT.md](./RENDER_DEPLOYMENT.md)** for detailed step-by-step instructions.
-
-**Quick Summary:**
-1. Deploy **Frontend** as a **Static Site** on Render
-   - Root Directory: `.` (or leave empty)
-   - Build Command: `cd prinstine-website; npm install; npm run build`
-   - Publish Directory: `prinstine-website/dist`
-2. Configure custom domain `prinstinegroup.org` in Render
-3. Add DNS records in Namecheap as provided by Render
-
-**Note:** Static sites must be configured manually in Render dashboard (Blueprints don't support static sites).
+**Quick summary:** leave the Vercel **Root Directory** empty so the repo root `vercel.json` runs `cd prinstine-website && npm install`, `npm run build`, and publishes `prinstine-website/dist`.
 
 ## License
 
 © 2025 Prinstine Group of Companies. All rights reserved.
-
-# prinstine-group-of-companies
