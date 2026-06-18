@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix prinstine-website run dev",
+    "start:frontend": "npm --prefix prinstine-website run dev",
+    "start:backend": "npm --prefix backend run dev"
+  }
+}
