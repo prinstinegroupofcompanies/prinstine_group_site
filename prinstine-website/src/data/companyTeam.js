@@ -4,7 +4,6 @@ import jamesettaPhoto from '../assets/jamesetta-pgc.jpeg';
 import francesPhoto from '../assets/frances_wallace.jpeg';
 import constantinePhoto from '../assets/constantine_vulue.jpeg';
 import seanPhoto from '../assets/sean_cole.jpeg';
-import samsonPhoto from '../assets/samson_bryant.jpeg';
 import williamPhoto from '../assets/william_buku.jpeg';
 import jamesKolliePhoto from '../assets/james_kollie.jpeg';
 import marjoriePhoto from '../assets/marjorie_dyer.jpeg';
@@ -20,7 +19,6 @@ export const companyTeam = [
   { name: 'Frances B. Wallace', title: 'Head — Prinstine Academy', image: francesPhoto },
   { name: 'Constantine J. Vulue', title: 'Head — Prinstine Microfinance', image: constantinePhoto },
   { name: 'Sean J. Cole', title: 'Finance Officer', image: seanPhoto },
-  { name: 'Samson Bryant', title: 'ICT Manager', image: samsonPhoto },
   { name: 'William L. Buku, Jr.', title: 'Head of Client Engagements', image: williamPhoto },
   { name: 'James D. Kollie', title: 'Procurement Officer', image: jamesKolliePhoto },
   { name: 'Marjorie P. Dyer', title: 'Administrative Assistant', image: marjoriePhoto },
@@ -60,12 +58,6 @@ export const teamCarouselMembers = [
     title: 'Finance Officer',
     bio: 'Supporting financial operations and day-to-day fiscal management for the group.',
     image: seanPhoto,
-  },
-  {
-    name: 'Samson Bryant',
-    title: 'ICT Manager',
-    bio: 'Managing technology systems and digital solutions that power Prinstine Group’s operations.',
-    image: samsonPhoto,
   },
   {
     name: 'William L. Buku, Jr.',
