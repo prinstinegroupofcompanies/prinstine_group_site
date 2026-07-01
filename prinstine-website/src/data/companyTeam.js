@@ -19,7 +19,6 @@ export const companyTeam = [
   { name: 'Frances B. Wallace', title: 'Head — Prinstine Academy', image: francesPhoto },
   { name: 'Constantine J. Vulue', title: 'Head — Prinstine Microfinance', image: constantinePhoto },
   { name: 'Sean J. Cole', title: 'Finance Officer', image: seanPhoto },
-  { name: 'William L. Buku, Jr.', title: 'Head of Client Engagements', image: williamPhoto },
   { name: 'James D. Kollie', title: 'Procurement Officer', image: jamesKolliePhoto },
   { name: 'Marjorie P. Dyer', title: 'Administrative Assistant', image: marjoriePhoto },
   { name: 'Eshmeal A. Harris', title: 'Finance Clerk', image: eshmealPhoto },
@@ -59,12 +58,7 @@ export const teamCarouselMembers = [
     bio: 'Supporting financial operations and day-to-day fiscal management for the group.',
     image: seanPhoto,
   },
-  {
-    name: 'William L. Buku, Jr.',
-    title: 'Head of Client Engagements',
-    bio: 'Building strong client relationships and ensuring exceptional service delivery.',
-    image: williamPhoto,
-  },
+
   {
     name: 'James D. Kollie',
     title: 'Procurement Officer',
