@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import logoImg from '../assets/prinstine-group-logo.jpeg';
+import logoImg from '../assets/prinstine-group-logo.webp';
 
 function Footer() {
   const currentYear = new Date().getFullYear();

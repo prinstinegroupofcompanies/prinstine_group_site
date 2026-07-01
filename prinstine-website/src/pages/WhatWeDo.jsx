@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import $ from 'jquery';
-import slide3 from '../assets/slide-3.jpeg';
+import slide3 from '../assets/slide-3.webp';
 
 function WhatWeDo() {
   const [counters, setCounters] = useState({ years: 0, clients: 0, projects: 0 });

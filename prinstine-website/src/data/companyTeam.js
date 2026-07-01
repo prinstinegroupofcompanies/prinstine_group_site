@@ -1,15 +1,15 @@
-import ceoPhoto from '../assets/CEO-profile image.jpeg';
-import jamesPhoto from '../assets/james-pgc.jpeg';
-import jamesettaPhoto from '../assets/jamesetta-pgc.jpeg';
-import francesPhoto from '../assets/frances_wallace.jpeg';
-import constantinePhoto from '../assets/constantine_vulue.jpeg';
-import seanPhoto from '../assets/sean_cole.jpeg';
-import williamPhoto from '../assets/william_buku.jpeg';
-import jamesKolliePhoto from '../assets/james_kollie.jpeg';
-import marjoriePhoto from '../assets/marjorie_dyer.jpeg';
-import eshmealPhoto from '../assets/ashmeal_harris.jpeg';
-import princeGarkpahPhoto from '../assets/prince_garkpah.jpeg';
-import maePhoto from '../assets/mae_take.jpeg';
+import ceoPhoto from '../assets/CEO-profile image.webp';
+import jamesPhoto from '../assets/james-pgc.webp';
+import jamesettaPhoto from '../assets/jamesetta-pgc.webp';
+import francesPhoto from '../assets/frances_wallace.webp';
+import constantinePhoto from '../assets/constantine_vulue.webp';
+import seanPhoto from '../assets/sean_cole.webp';
+import williamPhoto from '../assets/william_buku.webp';
+import jamesKolliePhoto from '../assets/james_kollie.webp';
+import marjoriePhoto from '../assets/marjorie_dyer.webp';
+import eshmealPhoto from '../assets/ashmeal_harris.webp';
+import princeGarkpahPhoto from '../assets/prince_garkpah.webp';
+import maePhoto from '../assets/mae_take.webp';
 
 /** Full company team (About page grid + CEO on Home) */
 export const companyTeam = [

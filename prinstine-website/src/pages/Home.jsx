@@ -3,18 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import $ from 'jquery';
-import slide1 from '../assets/Slide-1.jpeg';
-import slide3 from '../assets/slide-3.jpeg';
-import slide4 from '../assets/slide-4.jpeg';
-import ceoPhoto from '../assets/CEO-profile image.jpeg';
-import officeImage from '../assets/office-address-image.jpeg';
+import slide1 from '../assets/Slide-1.webp';
+import slide3 from '../assets/slide-3.webp';
+import slide4 from '../assets/slide-4.webp';
+import ceoPhoto from '../assets/CEO-profile image.webp';
+import officeImage from '../assets/office-address-image.webp';
 import { teamCarouselMembers, TEAM_CAROUSEL_COUNT } from '../data/companyTeam';
-import yolainPhoto from '../assets/Yolain_Kate_Waka_Metzger.jpeg';
-import amyPhoto from '../assets/Amy_N_Stewart.jpeg';
-import lavelaPhoto from '../assets/Cllr_Lavela_B_Walker.jpeg';
-import vayePhoto from '../assets/Dr_Vaye_N_Collins.jpeg';
-import jacksonPhoto from '../assets/Dr_Jackson_G_Weah.jpeg';
-import edmondPhoto from '../assets/Edmond_K._Bennicks.jpeg';
+import yolainPhoto from '../assets/Yolain_Kate_Waka_Metzger.webp';
+import amyPhoto from '../assets/Amy_N_Stewart.webp';
+import lavelaPhoto from '../assets/Cllr_Lavela_B_Walker.webp';
+import vayePhoto from '../assets/Dr_Vaye_N_Collins.webp';
+import jacksonPhoto from '../assets/Dr_Jackson_G_Weah.webp';
+import edmondPhoto from '../assets/Edmond_K._Bennicks.webp';
 
 function Home() {
   const API_BASE = import.meta.env.VITE_API_BASE || '';
@@ -23,11 +23,11 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentLeaderSlide, setCurrentLeaderSlide] = useState(0);
   
-  // Carousel images in order: slide-3, slide-1, slide-2, slide-4
-  // slide-3 (new image): contain + center so it fits properly; slide-1: contain; others: cover
+  // Carousel images in order: slide-3, slide-1, slide-4
+  // All hero images should cover the full width while preserving the center crop.
   const slideConfig = [
-    { src: slide3, position: 'center center', objectFit: 'contain' },
-    { src: slide1, position: 'center center', objectFit: 'contain' },
+    { src: slide3, position: 'center center', objectFit: 'cover' },
+    { src: slide1, position: 'center center', objectFit: 'cover' },
     { src: slide4, position: 'center center', objectFit: 'cover' },
   ];
   const slides = slideConfig;
@@ -600,6 +600,71 @@ function Home() {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Meet Our Team */}
+      <section className="py-24 bg-white dark:bg-gray-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
+              Our People
+            </span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-4 text-text dark:text-white">
+              Meet Our Team
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              The dedicated professionals driving Prinstine Group forward
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {teamCarouselMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.05, type: 'spring', stiffness: 100 }}
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative bg-neutral dark:bg-gray-700 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all border border-gray-100 dark:border-gray-600 overflow-hidden text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative z-10 w-40 h-40 mx-auto rounded-full overflow-hidden shadow-lg mb-5 border-4 border-white dark:border-gray-600 ring-2 ring-primary/20"
+                >
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    style={{
+                      objectPosition: 'center center',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                </motion.div>
+
+                <div className="relative z-10">
+                  <h3 className="text-lg font-heading font-bold mb-2 text-text dark:text-white group-hover:text-primary dark:group-hover:text-accent transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-sm font-semibold text-primary dark:text-accent leading-snug">
+                    {member.title}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

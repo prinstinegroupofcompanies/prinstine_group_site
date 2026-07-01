@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import $ from 'jquery';
 import { companyTeam } from '../data/companyTeam';
-import ceoPhoto from '../assets/CEO-profile image.jpeg';
-import teamPhoto from '../assets/Prinstine-manageral-team.jpeg';
-import officePhoto from '../assets/office-address-image.jpeg';
-import yolainPhoto from '../assets/Yolain_Kate_Waka_Metzger.jpeg';
-import amyPhoto from '../assets/Amy_N_Stewart.jpeg';
-import lavelaPhoto from '../assets/Cllr_Lavela_B_Walker.jpeg';
-import vayePhoto from '../assets/Dr_Vaye_N_Collins.jpeg';
-import jacksonPhoto from '../assets/Dr_Jackson_G_Weah.jpeg';
-import edmondPhoto from '../assets/Edmond_K._Bennicks.jpeg';
+import ceoPhoto from '../assets/CEO-profile image.webp';
+import teamPhoto from '../assets/Prinstine-manageral-team.webp';
+import officePhoto from '../assets/office-address-image.webp';
+import yolainPhoto from '../assets/Yolain_Kate_Waka_Metzger.webp';
+import amyPhoto from '../assets/Amy_N_Stewart.webp';
+import lavelaPhoto from '../assets/Cllr_Lavela_B_Walker.webp';
+import vayePhoto from '../assets/Dr_Vaye_N_Collins.webp';
+import jacksonPhoto from '../assets/Dr_Jackson_G_Weah.webp';
+import edmondPhoto from '../assets/Edmond_K._Bennicks.webp';
 
 function About() {
   const timelineRef = useRef(null);

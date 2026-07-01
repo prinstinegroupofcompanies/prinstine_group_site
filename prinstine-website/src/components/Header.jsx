@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import $ from 'jquery';
-import logoImg from '../assets/prinstine-group-logo.jpeg';
+import logoImg from '../assets/prinstine-group-logo.webp';
 
 function Header({ darkMode, toggleDarkMode }) {
   const [isScrolled, setIsScrolled] = useState(false);
