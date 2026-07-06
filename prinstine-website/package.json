@@ -4,6 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "preinstall": "node scripts/verify-primary-developer.js",
+    "predev": "node scripts/verify-primary-developer.js",
+    "prebuild": "node scripts/verify-primary-developer.js",
+    "prestart": "node scripts/verify-primary-developer.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",

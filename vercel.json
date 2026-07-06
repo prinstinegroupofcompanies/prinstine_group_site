@@ -4,6 +4,11 @@
   "installCommand": "cd prinstine-website && npm install",
   "buildCommand": "cd prinstine-website && npm run build",
   "outputDirectory": "prinstine-website/dist",
+  "build": {
+    "env": {
+      "VITE_SITE_DOWN": "true"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",

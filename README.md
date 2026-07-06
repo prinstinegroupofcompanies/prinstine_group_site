@@ -135,6 +135,31 @@ The backend runs with Node.js directly. For production, consider using PM2 or si
 - Responsive design works on all screen sizes
 - Animations are optimized for performance
 
+## Site status (maintenance)
+
+The public site is **currently down**. Visitors see a loading screen for more than 10 minutes, then a **404** page. Production builds set `VITE_SITE_DOWN=true` via `vercel.json`.
+
+To bring the site back online later, set `VITE_SITE_DOWN=false` in Vercel project environment variables and redeploy.
+
+## Developer access (restricted)
+
+Only the **primary developer** may install or run this project locally:
+
+| | |
+|---|---|
+| **Name** | Samson Bryant |
+| **Email** | samsonbryant89@gmail.com |
+
+Anyone else who clones this repo must **contact Samson Bryant before** running `npm install`, `npm run dev`, or `npm start`. Install and dev scripts verify your Git identity (`user.name` / `user.email`).
+
+**Primary developer — local development:** create `prinstine-website/.env.development.local` (not committed) with:
+
+```
+VITE_SITE_DOWN=false
+```
+
+Ensure Git is configured as Samson Bryant / samsonbryant89@gmail.com, then run `npm install` and `npm run dev` inside `prinstine-website`.
+
 ## Deployment
 
 This project is configured for deployment on **Vercel**.

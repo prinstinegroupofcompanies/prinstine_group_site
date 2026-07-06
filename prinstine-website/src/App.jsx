@@ -9,6 +9,7 @@ import WhatWeDo from './pages/WhatWeDo';
 import Partners from './pages/Partners';
 import BankDetails from './pages/BankDetails';
 import CertificateVerification from './pages/CertificateVerification';
+import SiteDownGate from './components/SiteDownGate';
 import './index.css';
 
 function App() {
@@ -37,23 +38,25 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="min-h-screen bg-neutral dark:bg-gray-900">
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/what-we-do" element={<WhatWeDo />} />
-            <Route path="/partners" element={<Partners />} />
-            <Route path="/bank-details" element={<BankDetails />} />
-            <Route path="/certificate-verification" element={<CertificateVerification />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <SiteDownGate>
+      <Router>
+        <div className="min-h-screen bg-neutral dark:bg-gray-900">
+          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/what-we-do" element={<WhatWeDo />} />
+              <Route path="/partners" element={<Partners />} />
+              <Route path="/bank-details" element={<BankDetails />} />
+              <Route path="/certificate-verification" element={<CertificateVerification />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </SiteDownGate>
   );
 }
 
