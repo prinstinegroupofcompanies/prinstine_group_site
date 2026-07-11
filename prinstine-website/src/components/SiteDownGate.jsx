@@ -44,7 +44,7 @@ function NotFoundScreen() {
 }
 
 export default function SiteDownGate({ children }) {
-  const siteDown = import.meta.env.VITE_SITE_DOWN !== 'false';
+  const siteDown = String(import.meta.env.VITE_SITE_DOWN).toLowerCase() === 'true';
   const [phase, setPhase] = useState(siteDown ? 'loading' : 'live');
 
   useEffect(() => {
